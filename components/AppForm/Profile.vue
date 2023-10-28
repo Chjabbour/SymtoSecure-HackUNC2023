@@ -21,7 +21,7 @@
         </div>
         <div>
           <label for="about" class="block text-sm font-medium text-gray-700"
-            >About yourself</label
+            >Please Describe Your Symptoms</label
           >
           <div class="mt-1">
             <textarea
@@ -29,7 +29,7 @@
               name="about"
               rows="3"
               class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm placeholder-slate-400"
-              placeholder="I am an astronaut"
+              placeholder="I am having stomach aches and headaches"
               maxlength="100"
               :value="desc"
               @input="$emit('update:desc', $event.target.value)"
