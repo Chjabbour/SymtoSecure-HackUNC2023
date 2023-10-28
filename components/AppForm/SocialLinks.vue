@@ -7,7 +7,7 @@
       <div class="grid grid-cols-2 gap-8 bg-white px-4 py-5 sm:p-6">
         <div>
           <label for="facebook" class="block text-sm font-medium text-gray-700"
-            >Facebook</label
+            >Head</label
           >
           <div class="mt-1 flex rounded-md shadow-sm">
             <span
@@ -28,7 +28,7 @@
         </div>
         <div>
           <label for="twitter" class="block text-sm font-medium text-gray-700"
-            >Twitter</label
+            >Shoulders</label
           >
           <div class="mt-1 flex rounded-md shadow-sm">
             <span
@@ -49,7 +49,7 @@
         </div>
         <div>
           <label for="instagram" class="block text-sm font-medium text-gray-700"
-            >Instagram</label
+            >Chest</label
           >
           <div class="mt-1 flex rounded-md shadow-sm">
             <span
@@ -70,7 +70,7 @@
         </div>
         <div>
           <label for="instagram" class="block text-sm font-medium text-gray-700"
-            >Github</label
+            >Arms</label
           >
           <div class="mt-1 flex rounded-md shadow-sm">
             <span
@@ -91,7 +91,7 @@
         </div>
         <div>
           <label for="instagram" class="block text-sm font-medium text-gray-700"
-            >Telegram</label
+            >Stomach</label
           >
           <div class="mt-1 flex rounded-md shadow-sm">
             <span
@@ -112,7 +112,7 @@
         </div>
         <div>
           <label for="instagram" class="block text-sm font-medium text-gray-700"
-            >Linkedin</label
+            >Back</label
           >
           <div class="mt-1 flex rounded-md shadow-sm">
             <span
@@ -133,7 +133,7 @@
         </div>
         <div>
           <label for="instagram" class="block text-sm font-medium text-gray-700"
-            >Email</label
+            >Groin</label
           >
           <div class="mt-1 flex rounded-md shadow-sm">
             <span
@@ -154,7 +154,49 @@
         </div>
         <div>
           <label for="instagram" class="block text-sm font-medium text-gray-700"
-            >Youtube</label
+            >Legs</label
+          >
+          <div class="mt-1 flex rounded-md shadow-sm">
+            <span
+              class="inline-flex items-center rounded-l-md border border-r-0 border-gray-300 bg-gray-50 px-3 text-sm text-gray-500"
+            >
+              <icon name="ph:youtube-logo-duotone" class="w-5 h-5" />
+            </span>
+            <input
+              type="search"
+              name="youtube"
+              id="youtube"
+              :value="youtube"
+              @input="$emit('update:youtube', $event.target.value)"
+              class="block w-full flex-1 rounded-none rounded-r-md border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+              placeholder="https://youtube.com/elonmusk"
+            />
+          </div>
+        </div>
+        <div>
+          <label for="instagram" class="block text-sm font-medium text-gray-700"
+            >Hands</label
+          >
+          <div class="mt-1 flex rounded-md shadow-sm">
+            <span
+              class="inline-flex items-center rounded-l-md border border-r-0 border-gray-300 bg-gray-50 px-3 text-sm text-gray-500"
+            >
+              <icon name="ph:envelope-duotone" class="w-5 h-5" />
+            </span>
+            <input
+              type="search"
+              name="email"
+              id="email"
+              :value="email"
+              @input="$emit('update:email', $event.target.value)"
+              class="block w-full flex-1 rounded-none rounded-r-md border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+              placeholder="elonmusk@geemail.com"
+            />
+          </div>
+        </div>
+        <div>
+          <label for="instagram" class="block text-sm font-medium text-gray-700"
+            >Feet</label
           >
           <div class="mt-1 flex rounded-md shadow-sm">
             <span
