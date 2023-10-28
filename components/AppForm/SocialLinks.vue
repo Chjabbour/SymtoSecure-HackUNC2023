@@ -1,7 +1,7 @@
 <template>
   <base-form-section
-    title="Social Links"
-    description="Add some social media links"
+    title="Body Parts"
+    description="Select a body part to discuss your issues"
   >
     <div class="shadow sm:overflow-hidden sm:rounded-md">
       <div class="grid grid-cols-2 gap-8 bg-white px-4 py-5 sm:p-6">
