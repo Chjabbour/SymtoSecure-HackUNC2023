@@ -1,7 +1,7 @@
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
 
 async function OpenAIStream(payload) {
-  const response = await fetch('https://api.openai.com/v1/completions', {
+  const response = await fetch('https://api.openai.com/v1/engines/gpt-3.5-turbo-16k-0613/completions', {
     headers: {
       'Content-Type': 'application/json',
       Authorization: `Bearer ${OPENAI_API_KEY}`
@@ -12,19 +12,20 @@ async function OpenAIStream(payload) {
   return response.json();
 }
 
-export default async function (req, res) {
+export default async (req, res) => {
   if (req.method === 'POST') {
-    const { searched } = req.body;
+    const { symptoms } = req.body;
     const payload = {
-      model: 'text-davinci-003',
-      prompt: searched,
-      temperature: 0.7,
+      model: 'gpt-3.5-turbo',
+      messages: [
+        { role: "user", content: symptoms },
+        { role: "system", content: "chatbot" }
+      ],
+      temperature: 0.8,
       max_tokens: 2048,
       top_p: 1.0,
-      frequency_penalty: 0.0,
-      stream: true,
+      frequency_penalty: 0.2,
       presence_penalty: 0.0,
-      n: 1
     };
     try {
       const data = await OpenAIStream(payload);
@@ -36,4 +37,4 @@ export default async function (req, res) {
   } else {
     res.status(405).end();  // Method Not Allowed
   }
-}
+};

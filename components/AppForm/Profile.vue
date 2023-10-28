@@ -31,10 +31,10 @@
               class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm placeholder-slate-400"
               placeholder="I am having stomach aches and headaches"
               maxlength="100"
-              :value="desc"
-              @input="$emit('update:desc', $event.target.value)"
+              v-model="desc"
             ></textarea>
           </div>
+          <button @click="analyzeSymptoms">Analyze Symptoms</button>
         </div>
 
         <div class="flex-grow col-span-6 sm:col-span-3">
@@ -54,6 +54,19 @@
     </div>
   </base-form-section>
 </template>
+
 <script setup>
-const props = defineProps(["name", "desc", "image"]);
+import { ref } from 'vue';
+import axios from 'axios';  // Import axios directly
+
+const desc = ref('');  // Initialize desc with an empty string
+
+const analyzeSymptoms = async () => {
+  try {
+    const response = await axios.post('/api/openai', { symptoms: desc.value });  // Updated to use axios
+    console.log(response);
+  } catch (error) {
+    console.error(error);
+  }
+};
 </script>

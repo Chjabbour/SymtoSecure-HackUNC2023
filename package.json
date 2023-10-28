@@ -11,6 +11,7 @@
     "@nuxtjs/color-mode": "^3.2.0",
     "@nuxtjs/tailwindcss": "^6.3.0",
     "@tailwindcss/forms": "^0.5.3",
+    "@types/node": "^20.8.9",
     "@vueuse/core": "^9.12.0",
     "@vueuse/nuxt": "^9.12.0",
     "nuxt": "^3.1.1",
@@ -18,6 +19,9 @@
   },
   "dependencies": {
     "@headlessui/vue": "^1.7.8",
+    "@nuxt/http": "^0.6.4",
+    "@nuxtjs/dotenv": "^1.4.1",
+    "axios": "^1.6.0",
     "floating-vue": "^2.0.0-beta.20",
     "js-base64": "^3.7.4",
     "openai": "^4.14.1",
