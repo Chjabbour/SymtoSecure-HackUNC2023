@@ -23,6 +23,9 @@
           v-model:Legs="data.Legs"
         />
 
+        <app-form-hr />
+        <app-form-links v-model="data.ls" />
+
       </div>
       <div class="border-t bg-white flex items-center">
         <button
