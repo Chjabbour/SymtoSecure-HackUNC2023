@@ -19,10 +19,10 @@
             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
           />
         </div>
-        <div>
-          <label for="about" class="block text-sm font-medium text-gray-700"
-            >Please Describe Your Symptoms</label
-          >
+         <div>
+          <label for="about" class="block text-sm font-medium text-gray-700">
+            Please Describe Your Symptoms
+          </label>
           <div class="mt-1">
             <textarea
               id="about"
@@ -31,10 +31,10 @@
               class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm placeholder-slate-400"
               placeholder="I am having stomach aches and headaches"
               maxlength="100"
-              :value="desc"
-              @input="$emit('update:desc', $event.target.value)"
+              v-model="desc"
             ></textarea>
           </div>
+          <button @click="analyzeSymptoms">Analyze Symptoms</button>
         </div>
 
         <div class="flex-grow col-span-6 sm:col-span-3">
@@ -54,6 +54,26 @@
     </div>
   </base-form-section>
 </template>
+
 <script setup>
-const props = defineProps(["name", "desc", "image"]);
+import { ref } from 'vue';
+import { useFetch } from '@nuxtjs/composition-api';
+
+const desc = ref('');  // Initialize desc with an empty string
+
+const { fetch, error, data } = useFetch(async () => {
+  const response = await fetch('/api/openai', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ symptoms: desc.value }),
+  });
+  return await response.json();
+});
+
+const analyzeSymptoms = () => {
+  fetch();
+};
+
 </script>
