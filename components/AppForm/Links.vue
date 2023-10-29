@@ -1,12 +1,32 @@
 <template>
-  <base-form-section title="Medical Information" description="Add more medical info here">
-    <template #helpertext>
-      <!-- <p class="mt-1 text-xs text-gray-600">
+    <!-- <template #helpertext>
+      <p class="mt-1 text-xs text-gray-600">
         Icon keys can be found in
         <a class="underline" href="https://icones.js.org/"
           >https://icones.js.org/</a
         >.
-      </p> -->
+      </p>
+    </template> -->
+    
+  <base-form-section
+    title="Medical Information"
+    description="Please include information that might be useful for your doctor to know."
+  >
+    <template #helpertext>
+      <p class="mt-1 text-xs text-gray-600">
+          <ul style="list-style-type: disc; padding-left: 5px;">
+              <li style="margin-top: 6px;">Gender/preferred pronouns for inclusivity.</li>
+              <li style="margin-top: 4px;">Special accommodations for disabilities.</li>
+              <li style="margin-top: 4px;">Prior diagnoses and treatments.</li>
+              <li style="margin-top: 4px;">Surgeries or hospitalizations.</li>
+              <li style="margin-top: 4px;">Medication list and dosages.</li>
+              <li style="margin-top: 4px;">Medication or substance allergies.</li>
+              <li style="margin-top: 4px;">Contact information.</li>
+              <li style="margin-top: 4px;">Hereditary conditions.</li>
+              <li style="margin-top: 4px;">Family prevalent illnesses.</li>
+          </ul>
+      </p>
+
     </template>
     <draggable
       :list="modelValue"
@@ -31,50 +51,47 @@
           <div class="shadow sm:overflow-hidden sm:rounded-md">
             <div class="space-y-6 bg-white px-4 py-5 sm:p-6">
               <div class="grid grid-cols-2 gap-4">
-  <div v-if="showInput">
-    <div > 
-      <label
-        for="name"
-        class="block text-sm font-medium text-gray-700"
-      >
-      </label>
-      <input
-        type="text"
-        name="iconKey"
-        id="iconKey"
-        value="icon-park-outline:fruiter"
-        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
-      />
-    </div>
-  </div>
-
-
-
+                <div v-if="showInput">
+                  <div>
+                    <label
+                      for="name"
+                      class="block text-sm font-medium text-gray-700"
+                    >
+                    </label>
+                    <input
+                      type="text"
+                      name="iconKey"
+                      id="iconKey"
+                      value="icon-park-outline:fruiter"
+                      class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                    />
+                  </div>
+                </div>
 
                 <div>
                   <label
-                    for="label"
+                    for="question"
                     class="block text-sm font-medium text-gray-700"
-                    >Label</label
+                    >Question</label
                   >
                   <input
                     type="text"
-                    name="label"
-                    id="label"
+                    name="question"
+                    id="question"
                     v-model="link.l"
                     class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                   />
                 </div>
                 <div class="col-span-2">
                   <label
-                    for="url"
+                    for="reponse"
                     class="block text-sm font-medium text-gray-700"
-                    >URL</label
+                    >Reponse</label
                   >
                   <input
                     type="url"
-                    name="url"
-                    id="url"
+                    name="reponse"
+                    id="response"
                     v-model="link.u"
                     class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                   />
