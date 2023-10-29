@@ -1,5 +1,5 @@
 <template>
-  <base-form-section title="Links" description="Add some links here">
+  <base-form-section title="Medical Information" description="Add more medical info here">
     <template #helpertext>
       <p class="mt-1 text-xs text-gray-600">
         Icon keys can be found in
