@@ -2,7 +2,10 @@
   <div class="h-screen grid grid-cols-3 divide-x">
     <div class="col-span-2 h-screen flex flex-col bg-slate-100">
       <div class="flex-1 overflow-y-auto p-8">
-        <base-form-section title="SymptoSecure"/> 
+        <div class = "flex items-center">
+        <img src="..\static\logo.png" alt="Icon" class="w-20 h-20 mr-4" />
+        <base-form-section title="SymptoSecure" class="text-lg"/> 
+      </div>
           <app-form-hr />
         <app-form-profile
           v-model:name="data.n"
