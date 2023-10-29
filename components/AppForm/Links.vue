@@ -23,7 +23,7 @@
               <li style="margin-top: 4px;">Medication or substance allergies.</li>
               <li style="margin-top: 4px;">Contact information.</li>
               <li style="margin-top: 4px;">Hereditary conditions.</li>
-              <li style="margin-top: 4px;">Family prevalent illnesses.</li>
+              <!-- <li style="margin-top: 4px;">Family prevalent illnesses.</li> -->
           </ul>
       </p>
 
