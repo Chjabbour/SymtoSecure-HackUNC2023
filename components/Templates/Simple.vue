@@ -50,19 +50,23 @@
       </span>
 
     </div>
+
     <div class="w-full flex-grow min-w-0">
+<div v-if="acc.ls && acc.ls.length > 0">
   <p class="font-medium text-sm leading-6 text-gray-900" style="overflow-wrap: break-word;text-align: center;">
-Additional Medical Information:    </p>
+    Additional Medical Information:
+  </p>
+  <ul class="space-y-2">
+    <ExternalLink
+      v-for="(link, id) in acc.ls"
+      :label="link.l"
+      :icon="link.i"
+      :url="link.u"
+      :key="id"
+    />
+  </ul>
 </div>
-    <ul class="space-y-2">
-      <ExternalLink
-        v-for="(link, id) in acc.ls"
-        :label="link.l"
-        :icon="link.i"
-        :url="link.u"
-        :key="id"
-      />
-    </ul>
+</div>
   </main>
 </template>
 <script setup>
