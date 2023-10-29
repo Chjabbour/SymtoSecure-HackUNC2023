@@ -95,29 +95,14 @@ const prefillDemoData = () => {
         l: "Amazon wishlist",
         i: "ant-design:amazon-outlined",
         u: "https://amazon.in",
-      },
-      {
-        l: "React JS course",
-        i: "grommet-icons:reactjs",
-        u: "https://reactjs.org/",
-      },
-      {
-        l: "Donate for our cause",
-        i: "iconoir:donate",
-        u: "https://who.int",
-      },
-      {
-        l: "Download my resume",
-        i: "ph:file-pdf",
-        u: "https://google.com",
-      },
+      }
     ],
   };
 
 };
 
 const publish = () => {
-  const url = `${window.location.origin}/1?data=${encodeData(data.value)}`;
+  const url = `${window.location.origin}/patient-view?data=${encodeData(data.value)}`;
   navigator.clipboard.writeText(url).then(() => {
     alert("Link copied to clipboard");
   });

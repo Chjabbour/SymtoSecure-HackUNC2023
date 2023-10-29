@@ -1,12 +1,12 @@
 <template>
   <base-form-section title="Medical Information" description="Add more medical info here">
     <template #helpertext>
-      <p class="mt-1 text-xs text-gray-600">
+      <!-- <p class="mt-1 text-xs text-gray-600">
         Icon keys can be found in
         <a class="underline" href="https://icones.js.org/"
           >https://icones.js.org/</a
         >.
-      </p>
+      </p> -->
     </template>
     <draggable
       :list="modelValue"
@@ -31,20 +31,26 @@
           <div class="shadow sm:overflow-hidden sm:rounded-md">
             <div class="space-y-6 bg-white px-4 py-5 sm:p-6">
               <div class="grid grid-cols-2 gap-4">
-                <div>
-                  <label
-                    for="name"
-                    class="block text-sm font-medium text-gray-700"
-                    >Icon Key (optional)</label
-                  >
-                  <input
-                    type="text"
-                    name="iconKey"
-                    id="iconKey"
-                    v-model="link.i"
-                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
-                  />
-                </div>
+  <div v-if="showInput">
+    <div > 
+      <label
+        for="name"
+        class="block text-sm font-medium text-gray-700"
+      >
+      </label>
+      <input
+        type="text"
+        name="iconKey"
+        id="iconKey"
+        value="icon-park-outline:fruiter"
+        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+      />
+    </div>
+  </div>
+
+
+
+
                 <div>
                   <label
                     for="label"
@@ -97,6 +103,8 @@
 <script setup>
 import draggable from "vuedraggable";
 const emit = defineEmits(["update:modelValue"]);
+const showInput = false; // Set 'showInput' to false to always hide the input box
+
 const props = defineProps({
   modelValue: Array,
 });
