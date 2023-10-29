@@ -35,6 +35,12 @@
               @input="$emit('update:desc', $event.target.value)"
             ></textarea>
           </div>
+          <button @click="analyzeSymptoms">Analyze Symptoms</button>
+        </div>
+
+        <div v-if="response">
+          <h2>Analysis Results</h2>
+          <p>{{ response }}</p>
         </div>
 
         <div class="flex-grow col-span-6 sm:col-span-3">
@@ -54,6 +60,53 @@
     </div>
   </base-form-section>
 </template>
-<script setup>
-const props = defineProps(["name", "desc", "image"]);
+
+<script>
+import { ref, defineProps } from 'vue';
+
+export default {
+  props: {
+    name: String,
+    desc: String,
+    image: String,
+  },
+  setup(props) {
+    const response = ref('');  // Define the response ref here
+
+    const analyzeSymptoms = async () => {
+      console.log(props.desc);  // Debugging line to check the value of desc
+
+      const payload = {
+        model: 'gpt-3.5-turbo',
+        messages: [
+          { role: "user", content: props.desc },
+          { role: "system", content: "chatbot" }
+        ],
+        temperature: 0.8,
+        max_tokens: 2048,
+        top_p: 1.0,
+        frequency_penalty: 0.2,
+        presence_penalty: 0.0,
+      };
+
+      try {
+        const res = await fetch('https://api.openai.com/v1/chat/completions', {
+          headers: {
+            'Content-Type': 'application/json',
+            // Authorization: `Bearer 'enter your API key here'`
+          },
+          method: 'POST',
+          body: JSON.stringify(payload)
+        });
+        const data = await res.json();
+        console.log(data);
+        response.value = data.choices[0]?.message?.content || 'No response';  // Update to extract the content property
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    return { analyzeSymptoms, response };
+  },
+};
 </script>
