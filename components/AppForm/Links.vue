@@ -70,19 +70,19 @@
 
                 <div>
                   <label
-                    for="question"
+                    for="details"
                     class="block text-sm font-medium text-gray-700"
-                    >Question</label
+                    >Details</label
                   >
                   <input
                     type="text"
-                    name="question"
-                    id="question"
+                    name="details"
+                    id="details"
                     v-model="link.l"
                     class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                   />
                 </div>
-                <div class="col-span-2">
+                <!-- <div class="col-span-2">
                   <label
                     for="reponse"
                     class="block text-sm font-medium text-gray-700"
@@ -95,13 +95,13 @@
                     v-model="link.u"
                     class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                   />
-                </div>
+                </div> -->
               </div>
               <p
                 class="mt-2 text-xs text-center text-slate-400"
                 v-if="!link.l || !link.u"
               >
-                Link shown in preview once label and url are added
+                Please only include details about your medical history
               </p>
             </div>
           </div>
