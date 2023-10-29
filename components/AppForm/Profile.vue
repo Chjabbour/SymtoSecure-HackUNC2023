@@ -35,13 +35,13 @@
               @input="$emit('update:desc', $event.target.value)"
             ></textarea>
           </div>
-          <button @click="analyzeSymptoms">Analyze Symptoms</button>
+          <!-- <button @click="analyzeSymptoms">Analyze Symptoms</button> -->
         </div>
 
-        <div v-if="response">
+        <!-- <div v-if="response">
           <h2>Analysis Results</h2>
           <p>{{ response }}</p>
-        </div>
+        </div> -->
 
         <div class="flex-grow col-span-6 sm:col-span-3">
           <label for="photo-url" class="block text-sm font-medium text-gray-700"
