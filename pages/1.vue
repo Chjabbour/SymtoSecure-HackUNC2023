@@ -43,4 +43,14 @@ const handleAnalysisResult = async (description) => {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.result-box {
+  border: 2px solid #000;
+  padding: 20px;
+  margin: 10px 0;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  width: 80%; /* or whatever width you prefer */
+  margin: auto; /* center the box */
+}
+</style>
