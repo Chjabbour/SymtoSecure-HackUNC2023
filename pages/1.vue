@@ -7,13 +7,18 @@
     >
       <base-loading class="h-5 w-5" />
     </div>
+
   </div>
 </template>
 <script setup>
-import { decodeData } from "../utils/transformer";
+import { decodeData,analyzeSymptoms } from "../utils/transformer";
 const route = useRoute();
 const acc = route.query.data;
 const decodedData = ref({});
 decodedData.value = decodeData(acc);
+console.log(decodedData.value.d);
+analyzeSymptoms(decodedData.value.d);
+</script>
+<script> 
 </script>
 <style scoped></style>
