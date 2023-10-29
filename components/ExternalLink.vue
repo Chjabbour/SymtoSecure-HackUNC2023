@@ -1,8 +1,4 @@
 <template>
-    <div class="w-full flex-grow min-w-0">
-    <p class="font-medium text-sm leading-6 text-gray-900" style="overflow-wrap: break-word;text-align: center;">
-Additional Medical Information:    </p>
-  </div>
   <li>
     <dt
       class="flex items-center space-x-2 p-1 -m-1 rounded-xl hover:bg-slate-100 bg-slate-50"

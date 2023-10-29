@@ -50,6 +50,10 @@
       </span>
 
     </div>
+    <div class="w-full flex-grow min-w-0">
+  <p class="font-medium text-sm leading-6 text-gray-900" style="overflow-wrap: break-word;text-align: center;">
+Additional Medical Information:    </p>
+</div>
     <ul class="space-y-2">
       <ExternalLink
         v-for="(link, id) in acc.ls"
