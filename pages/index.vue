@@ -70,7 +70,7 @@ const data = ref({
 const prefillDemoData = () => {
   data.value = {
     n: "John Snow",
-    d: "I’m John Snow, the king in the north. I know Nothing.",
+    d: "reply with 1 word",
     i: "https://i.insider.com/56743fad72f2c12a008b6cc0",
     Head: true,
     Shoulders: true,
